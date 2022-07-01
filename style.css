@@ -274,10 +274,9 @@ buat hmtlnya dulu stlahnya baru edit di css atur pola htmlnya
   /* ada 4 icon dari fontweb kita bagi sja dgn grid 4 col
   utk 4 content tsb 
   */
-  padding: 0.5rem 2rem;
+  /* padding: 0.5rem 2rem; */
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-
   align-items: center;
 }
 
@@ -290,6 +289,28 @@ buat hmtlnya dulu stlahnya baru edit di css atur pola htmlnya
 sekarang di layar penuh kiata akan atur dengan cara media query atau dgn grid auto fit
 */
 
-/* autr layar lebar dgn media query  */
+/* 
+=====================================
+atur layar lebar dgn media query  
+====================================
+note :jika pada 768 dan < dari 1170 maka ada 2 cards
+sbb:buat  2 media-query 1: min-width 768 dan media query 2: min-width 1170
+*/
+/* 2 col ktika 768px */
+@media screen and (min-width: 768px) {
+  .cards-center {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 2rem;
+  }
+}
+/* 3 col diatas >= 1170px */
+@media screen and (min-width: 1170px) {
+  .cards-center {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 2rem;
+  }
+}
 
 /* atur layar lebar dgn grid atuo-fit */
