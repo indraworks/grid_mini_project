@@ -1,0 +1,227 @@
+/* 
+=================
+ Variables
+=================
+*/
+:root {
+  --primaryColor: #f15025;
+  --mainBlack: #222;
+  --mainWhite: #fff;
+  --offWhite: #f7f7f7;
+  --darkGery: #afafaf;
+  --mainTransition: All 0.3s linear;
+  --mainSpacing: 0.2rem;
+}
+
+/* 
+=================
+ GLobal Style
+=================
+*/
+/* reseting all */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* agar jika pading ga mmnebesar  */
+}
+
+body {
+  font-family: "Fira Code", monospace;
+  color: var(--mainBlack);
+  background: var(--mainWhite);
+  line-height: 1.5; /* utk paragraf 2  */
+}
+
+/* styke text decoration utk link dimatikan  */
+a {
+  text-decoration: none;
+}
+
+/* utk image smua harus mengisi 100% pada kotak imagenya 
+ displaynya block agar 1 baris di ocupied oleh gambar
+*/
+img {
+  width: 100%;
+  display: block;
+}
+/* besar h1,h2,h3 seragam kita set dari awal  */
+h1,
+h2,
+h3 {
+  text-transform: capitalize; /* hruf besar diawal */
+  letter-spacing: var(--mainSpacing); /* jarak antar huruf */
+  margin-bottom: 1.25rem;
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  margin-bottom: 0;
+}
+p {
+  font-size: 0.7rem;
+  font-weight: 300;
+  line-height: 2;
+}
+
+/* btn ukt link back home  */
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  text-transform: capitalize;
+  background: var(--mainWhite);
+  color: var(--primaryColor);
+  border: 5px solid var(--primaryColor);
+  margin: 2.5rem 4.5rem;
+  transition: var(--mainTransition);
+}
+
+.btn:hover {
+  color: var(--mainWhite);
+  background: red;
+  border: none;
+}
+/* 
+============
+Navbar    -navbar background grey
+           -utk target li list-tstyle none ada 
+           -ukt target a link ,displayblock,space,pading bawah saja
+============
+*/
+
+.main-navbar {
+  background: var(--darkGery);
+  padding: 0 2rem;
+}
+
+.main-navbar li {
+  list-style: none;
+}
+.main-navbar a {
+  text-transform: capitalize;
+  display: block;
+  padding: 1rem 0;
+  color: var(--primaryColor);
+  letter-spacing: var(--mainSpacing);
+}
+
+.main-navbar a:hover {
+  color: var(--mainBlack);
+}
+
+/* 
+sekaragn target ul:
+ul adalah tempat2 li dimana ada 4 list
+   nah waktu layar ini besar kita batasi 
+   max lebarnya dgn max-width:1170px 
+   jdi ktika dia uda 992px keatas 
+   kita atur ul nya  tetap di 1170 dan ulnya center ada ditengah 
+   margin:0 auto;
+   utk test warna mmg max 1170 dgn background: var(--primaryColor);
+   nah kita udah belajar grid ul punya 4 li 
+   buat display:grid;
+   nah kita buat columnya 4 gfraction 
+   dgn grid_template_columns:repeat(4,1fr) 
+
+*/
+@media screen and (min-width: 992px) {
+  .main-navbar ul {
+    max-width: 1170px;
+    margin: 0 auto;
+    /* background: var(--primaryColor); */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  /* kita tengahkan center utk a linknya masing2 individu pada contentya 
+     ngetestya hidupkan lagi backgroundnya primaryColir!
+  */
+  .main-navbar a {
+    text-align: center;
+  }
+}
+/*  kita uda selesai buat navbar nah sekg buat hero  */
+
+/* catatan :pre-copy smua hero html ke html2 yg lain 
+tiles,cards,layout  sbbb kita gak pakai react router karn ini manual
+hany saja gak butuh nabvbar delete saja nabarnya slahkan copy dan beri nama 
+stiap page ada tomol dibawah btn utk balik ke home/index.html yg berisi navbar
+*/
+
+/* 
+============
+HERO 
+============
+*/
+/* kita mau setup hero-heaader uini 100% 1 halaman 
+   slain iut backgroun orange ,color putih
+   dan kita buat dipslay grid
+   jsutfy content center pas di acenter kita bisa liah
+   akan strech kebawah kita buat utk xnya juga 
+   align-items center
+*/
+.hero-header {
+  height: 100vh;
+  background: var(--primaryColor);
+  color: var(--mainWhite);
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+/*terlihat tulisan tetap svlah kiri ya kita harus atur yg ada dlm baner 
+       utk itu autr class banner dgn text-align:center */
+/* .hero-banner {}
+  /* utk test dulu */
+/* text-align: center;
+  background: blue; */
+*/
+/*  kita mau paragrap banner kita jika layar lebar dia tretap di 560px 
+dan dia ocupied 80% dari layar banner
+*/
+
+.hero-banner p {
+  width: 80%;
+  max-width: 560px;
+  font-size: 1rem;
+}
+/* ktika layar smakin lebar kita hanya buat 
+ bahwa hero baner punya pading 3rem slbihnya tidak berlaku di layar besar
+ dan kita mau hero baneer ini ada bagkround layar jika dia lebih besar dari 600px
+
+*/
+@media screen and (max-width: 600px) {
+  .hero-banner {
+    padding: 0 3rem;
+  }
+}
+
+/* kita mau pada saat layar besar harsu ada backgroyd color pada baner-beader
+   ambilnya di src image2 dan kita mau ada gradient liner cara taruh gradien liner adalah sbb: 
+   background: url("./src/images/image-2.jpeg") center/cover fixed no-repeat;
+   taruh depan url : 
+   linear-gradient(color1,color2) ,url....
+   kasih coma rgbnya adalah warna asli utama dan penderanya gelap 
+   color1 adalah warna asli rgba dari orange warna backrodu kita 
+   color 2 ada lah warna hitam gelam diambah opacitynya 
+   oasti hiatam dgn opacity 0.75
+*/
+@media screen and (min-width: 768px) {
+  .hero-header {
+    background: linear-gradient(rgba(249, 105, 37, 0.75), rgba(0, 0, 0, 0.15)),
+      url("./src/images/image-2.jpeg") center/cover fixed no-repeat;
+  }
+}
+
+/* ======
+  CArds
+========
+kita akan bua cards di mimimlayer dimana hanya ada 1 fr col yg kebawah 
+stlah layar di besarkan maka akan ada 2 buah col card ,dan stalhnya layar>768px 
+maka akan ada 3 col cards kita akan melakukanya dgn media srcreen .query atau tanpa
+menggunakannya sbb:
+jadi kita akan buat card ada 4 buat card 
+utk layer kecil ada 1 col cards ,layar menengah ada 2 card, layer besar 3 card
+kita buat htmlnya dulu utk layr kcli itu dfault fixnya 
+bisa liaht di htmlnya baru stalhnya kita atur di css disini! utk 3 hal diatas
+1 card ada image,ada card-info,dan trakhir footer
+
+*/

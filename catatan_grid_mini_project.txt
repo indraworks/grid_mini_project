@@ -1,0 +1,25 @@
+kalau mau ambil google font pilih yg customize agar bisa banyak select 
+secara kita select 12 jenis besar font yg 300 & 400 
+kalau yg sekearng sudabn tidak ada piliha customize pada layar tinggal pilih tanda (+) 
+select 300 & 400 setlahnya ke pojok kanan adtas sorot kota abi2 ada tanda + disblah kanan download familiy label klik disana terlihat ,
+tinggal select yg <link kedua>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400&display=swap" rel="stylesheet">
+
+ini ditaruh di html ,
+///jika pilih import --->diaruh di file css///
+kalau mau import bisa pilih inport ini ditaruh di paling atas style,css kita :
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400&display=swap');
+
+manggil tetap sama krn ini ada di <main> alias di body maka dicss dipanggil 
+body  {
+    font-family:"Fira Code",times-romans;
+}
+ingat harus pakai tanda " krn ini dari luar !
+
+/////di css kita wajib mmbuat 
+varaibel globla dimana utk mntnukan warna2 primer dan skunder
+space,tnrasition ( udk animation )
+
+note kalau liat2 color :https://www.flatuicolorpicker.com/colors/ecstasy/ 
+ada banyak pilihan cari rgbanya 
