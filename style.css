@@ -223,5 +223,73 @@ utk layer kecil ada 1 col cards ,layar menengah ada 2 card, layer besar 3 card
 kita buat htmlnya dulu utk layr kcli itu dfault fixnya 
 bisa liaht di htmlnya baru stalhnya kita atur di css disini! utk 3 hal diatas
 1 card ada image,ada card-info,dan trakhir footer
+buat hmtlnya dulu stlahnya baru edit di css atur pola htmlnya
+ <cards> 
+     <title>
+     .<cards> 
+       <article card>
+          <img>
+          <card info>
+          <card footer>
+        </article card>
+     <cards>
 
+ <cards>
 */
+
+.cards {
+  text-align: center;
+}
+.cards {
+  /* atas bawah aj di pading krii kanan gak  */
+  padding: 4rem 0;
+}
+/* card-center bahai 4 anak card 
+   card -center ini besarnya 80vw dari besar layar gak lebih 
+   maks widthnya tetap 1170px jika layar besar
+   dibuat margin atas bawah srem dan center/auto 
+*/
+.cards-center {
+  /* ini nnti pada saat wide bisa di set utk grid dan bisa dgn 
+   media query /dgn grid ngaturnya
+  */
+  width: 80vw;
+  max-width: 1170px;
+  margin: 2rem auto;
+}
+/* mrupakan bagian dari card center erisa image,card-info,card-footer */
+.card {
+  border: 1px solid var(--darkGery);
+  /* pisahin antar card dgn botom diberi jarak */
+  margin-bottom: 3rem;
+}
+
+/* card info  */
+.card-info {
+  padding: 1.5rem;
+}
+
+.card-footer {
+  background: var(--darkGery);
+  /* ada 4 icon dari fontweb kita bagi sja dgn grid 4 col
+  utk 4 content tsb 
+  */
+  padding: 0.5rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  align-items: center;
+}
+
+/* kasih orange warna content dari icon lewat span  */
+.card-footer span {
+  color: var(--primaryColor);
+}
+
+/*  nah skkang walaupun dibesarkan tetap dia di 1170 utk cards ini 
+sekarang di layar penuh kiata akan atur dengan cara media query atau dgn grid auto fit
+*/
+
+/* autr layar lebar dgn media query  */
+
+/* atur layar lebar dgn grid atuo-fit */
