@@ -23,3 +23,24 @@ space,tnrasition ( udk animation )
 
 note kalau liat2 color :https://www.flatuicolorpicker.com/colors/ecstasy/ 
 ada banyak pilihan cari rgbanya 
+
+
+
+///Perbedaan autofit dan auto-fill 
+sekanra gkita cari tahu perbedaan antara auto-fit dan auto fill 
+jadi kita buat 1 card aja didalam card-centers akan tetapi ketersediaan colun 
+di grid kita buat 4 columns 
+nah apa yg terjadi bisa kita lihat dgn auto fill seting sbb :
+ /* grid-template-columns: repeat(auto-fill, minmax(280.5px, 1fr)); */
+ walaupun tidak ada 3 cards hanya ada 1 card saja walaupun kita udah sediakan utk max halaman 
+ akan terisi 4 cell ngsi di 3 column tapi keteresdeiaan dari cell di html hanya di baut 1 card 
+ saja jadi 1 col terisi ,3 col lain disediakan dan besar dari pada card adalah 280px tetap sama! 
+ 3 lainya bisa terlihat kota2 3 col utk ktersediaan nya 
+
+
+ nah  utk auto fit ,ktika dia berada pada layar lebar dgn ktersdiaan 1 card htmlnya 
+ tapi utk col kita sudah setup di css utk 3 column apa yg terjadi ternyata sesuai dgn namanya disebtu 
+ dgn auto-fit!
+ jdi itu 1 card melar atau stretch dia tidak ada keserdiaaan utk column tap cardnya ini 
+ besarnya emelebat hingga 80vw (stret) fit memenuhi 1 layer! utk 1 card saja!
+ jadi begitulah beda antara auto-fill dan auto fit 
