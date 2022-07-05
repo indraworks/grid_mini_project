@@ -57,3 +57,30 @@ sd 4,maka utk tiles-9 img yg dipakai adalah 1 ,
 utk tiles css pertama kita akan buat ngatur dari layar trkcil 
 utk 1 colum baru kmudian atur 2 col pada saat min-width :768px
 kita atur dulu dng media-query
+
+
+///utk Layot css ///
+layout.html
+jadi kita rencaa mambuat utk sidebar jika pda saat layar lebar 
+dgn content ditengah  disni navbar kita masukan di bagian main 
+<main>
+ <header> title <header>
+ <nav> </nav<>
+ <content> <p> lorem70</p></p><content>
+</main>
+intinya gini nnti yg lorem70 ini kita kurangkan menjadi 
+lorem 15 apa yg terjadi akan sama footer terangkat keatas 
+dan yg lainya keangkat keatas utk itu kita atur rowsnya 
+height:100vh;--->ini diset di main class! 
+grid-template-rows:
+disiut ada 5 content  header nav content/p sidebar footer 
+nah hanya yg content atau p ini yg kita kasih 1fr artinya dia akan selalu 1 frame
+yg lainya bebas yaitu auto krn yg fram ini dia yg berubah2 tingginya 
+utk itu setup di main 
+.main {
+    min-height:100vh;
+    display:grid;
+    grid-template-columns:1fr;
+    grid-template-rows:auto auto 1fr auto auto;
+    
+}
