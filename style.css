@@ -585,51 +585,51 @@ maka kita buat atur hught dari ing 100% always
 */
 
 .header {
-background: var(--primaryColor);
-color:var(--mainWhite);
-text-align: center;
-padding:0.5rem 0;
+  background: var(--primaryColor);
+  color: var(--mainWhite);
+  text-align: center;
+  padding: 0.5rem 0;
 }
 .navbar {
   background: var(--darkGery);
-
 }
 .navbar li {
- list-style-type: none;
+  list-style-type: none;
 }
 .navbar a {
- padding: 1rem;
- display: inline-block;
- letter-spacing: var(--mainSpacing);
- font-size: 1.2rem;
- color:var(--mainBlack)
- transition:var(--mainTransition)
+  padding: 1rem;
+  display: inline-block;
+  text-transform: capitalize;
+  letter-spacing: var(--mainSpacing);
+  font-size: 1.2rem;
+  color: var(--mainBlack);
+  transition: var(--mainTransition);
+}
+.navbar a:hover {
+  color: var(--mainWhite);
 }
 
 .content {
-  padding:2rem;
+  padding: 2rem;
 }
 .content p {
   font-size: 1rem;
 }
 .sidebar {
   background: var(--primaryColor);
-  padding:1rem 0;
+  padding: 1rem 0;
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(4, 1fr);
   justify-items: center;
-  color:var(--mainWhite);
-  font-size:1.2rem;
-
-
+  color: var(--mainWhite);
+  font-size: 1.2rem;
 }
 .footer {
   text-align: center;
   background: var(--mainBlack);
-  color:var(--mainWhite);
+  color: var(--mainWhite);
   text-transform: capitalize;
   padding: 0.5rem 0;
-
 }
 /* atur main utk content dibuat 1fr karena dinamyc */
 .main {
@@ -641,18 +641,71 @@ padding:0.5rem 0;
   maka si sidebar,footer  ini dan yg lainya tidak kenagkat keatas 
   krn kita sudah setup utk content 1fr yaitu tetap diisi dgn 1 buah frame
   */
-/* selnjutnay kita atur jika dberada di min-width 768px 
+  /* selnjutnay kita atur jika dberada di min-width 768px 
 yatu navbarnya jadi grid dgn 4fr masing2 
 */
-
-
 }
-@media screen and (min-width:768px){
-  .navbar {
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
+@media screen and (min-width: 768px) {
+  .navbar ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     align-items: center;
+    justify-items: center;
   }
 }
 
 /* End Pengaturan layout css */
+
+/* kita mau atur tampilan navbarnya ada dis eblahkiri 
+dengan 1fr, dan cotnent ditengah  bisa diliha tpada gambar di image
+pegarturan layout dgn gridname
+kit aatud di 992px utk atur tentu lewat main sbgai wraping dibuat display grid
+kita lihat di laout html berapa utk grid columns dan rownnya 
+*/
+
+@media screen and (min-width: 992px) {
+  .main {
+    /* check di layout html brap col dan rownya  dari gambar 
+     image_pengaturan layout 
+     stlahnya kita pake nama utk gridlinesnya 
+     */
+    grid-template-columns: [start]200px [col1-end] 1fr [col2-end] 50px [end];
+    grid-template-rows: [start] auto [row1-end] 1fr [row2-end] auto [end];
+    /* stlah seting line name baru kita masukan 
+      masing2 batasan line names diatas ke css tag kita ke mis(lihathtmlnya):
+      header navbar content sidebar footer
+    */
+  }
+  .header {
+    grid-column: start/end; /* ocupied ujung keujung  */
+    grid-row: start/row1-end;
+  }
+  .navbar {
+    grid-column: start/col1-end;
+    grid-row: row1-end/row2-end;
+  }
+
+  .content {
+    grid-column: col1-end/col2-end;
+    grid-row: row1-end/row2-end;
+  }
+  .sidebar {
+    grid-column: col2-end/end;
+    grid-row: row1-end/row2-end;
+  }
+  .footer {
+    grid-column: start/end;
+    grid-row: row2-end/end;
+  }
+  .navbar ul {
+    grid-template-columns: 1fr;
+    align-items: center;
+    min-height: 100%;
+  }
+  .sidebar {
+    grid-template-columns: 1fr;
+    align-items: center;
+    min-height: 100%;
+    background: var(--darkGery);
+  }
+}
