@@ -52,3 +52,8 @@ nah apa yg terjadi bisa kita lihat dgn auto fill seting sbb :
 utk tiles html mengunakan images 1sd 4 ,nah card individu yg dibuat adalah 
 9 jadi diurutkan saja sesudah card-4 atau class tiles-4 maka ulang lagi utk source img-1
 sd 4,maka utk tiles-9 img yg dipakai adalah 1 ,
+
+///Tiles csss //////
+utk tiles css pertama kita akan buat ngatur dari layar trkcil 
+utk 1 colum baru kmudian atur 2 col pada saat min-width :768px
+kita atur dulu dng media-query

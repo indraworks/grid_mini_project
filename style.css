@@ -446,3 +446,132 @@ jika card4 content card-info ditambah tulusan dgn
 card img {
   height: 100%;
 }
+/* ===================end pengaturan Cards css  */
+
+/* Start Pengaturan tiles css */
+
+/* ======
+  TILES
+==========
+*/
+/* utk wraping */
+.tiles {
+  padding: 4rem 0;
+}
+/* utk judl  */
+.title {
+  text-align: center;
+}
+
+/* nah di bagian tiles-center samadgn card-centet
+utk wraping card2 didalam dgn grid  ini default atur 
+layer trckicl ssudahnya atur di layar 768px 990 atau > lbih besar
+dng media query atau dgn grid nntinya ( sama sprti card css )
+*/
+.tiles-center {
+  width: 90vw;
+  max-width: 1170px;
+  margin: 2rem auto;
+  display: grid;
+  /* tak perlu ada grid col gap krn palingkecil saat ini hanya ada 1 col */
+  grid-row-gap: 2rem;
+}
+
+/* pada 768px 2 col  */
+@media screen and (min-width: 768px) {
+  .tiles-center {
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 2rem;
+  }
+}
+
+/* pada 992px jadi 3 col  */
+@media screen and (min-width: 992px) {
+  .tiles-center {
+    grid-template-columns: repeat(3, 1fr);
+    /* grid-column-gap: 2rem;  kalau udah dideclre ditempat yg sama ak perlu tulis ulang*/
+  }
+}
+
+/* nah pada big scree 1100 px jadi 4 col 
+disni kita atur utk mmbuat layout dari patokan pada gambar 
+s
+ nah disini mesti lihat utk cara atur nntinya layout speti  tiles pada layar besartsb 
+-jadi cara peratama adalah menghitung berapa row dan col dasar pembentuk tiles-layout
+ tsb  didapatkan 5 rows ( dari yg kecil) dan 4 col dari yg kotak kcul 
+
+- stlahnya kita buat grid areas dari bentuk tilesnya maka grid area dibentuk 
+  dati tanda petik "" sbagi row dgn pemisah spasi ada 5 rows dan dlmnya ada 
+  4 col sbb kita proyeksikan dulu so,nolnya  : 
+  grid-templare-areas:
+  "a a a b"
+  "a a a b"
+  "c c c c"
+  "d e e e"
+  "d f g h"
+ ( note ingat tanpa "," hanya spasi dan tanda "" sbgai row-nya
+-
+stlahnya kita declare asign masing2 grade area ke tile-1 sd tile-9 sbb:
+.tile-1 {
+grid-area:a;
+} dst.....
+stlahnya kita kan tahu masing2 repsentasi dari indivudu tile-1 mewakili "a"
+ tile-2 mewkili b area nah masing2 dideclare agar tampak  pada htmlnya 
+ tampa menulis declare maka tidak akan pernah bisa 
+ sbgaiknya urut sbab gak maslaah utk menukar antar tile-x masuk grid area mana 
+
+-jangan lupa jika pengaturanya pada grade area ada class img 
+maka kita buat atur hught dari ing 100% always 
+.tiles-center ing {
+   hight:100%;
+}
+ */
+/* berikut ngatur 1100 4 cols */
+
+@media screen and (min-width: 1170px) {
+  .tiles-center {
+    /* utk define templates:4 cols */
+    grid-template-columns: repeat(4, 1fr);
+    /* define 5 rows */
+    grid-template-rows: repeat(5, 150px);
+    /* define grid template-areas */
+    grid-template-areas:
+      "a a a b"
+      "a a a c"
+      "d d d d"
+      "e f f f"
+      "e g h i";
+  }
+  .tile-1 {
+    grid-area: a;
+  }
+  .tile-2 {
+    grid-area: b;
+  }
+  .tile-3 {
+    grid-area: c;
+  }
+  .tile-4 {
+    grid-area: d;
+  }
+  .tile-5 {
+    grid-area: e;
+  }
+  .tile-6 {
+    grid-area: f;
+  }
+  .tile-7 {
+    grid-area: g;
+  }
+  .tile-8 {
+    grid-area: h;
+  }
+  .tile-9 {
+    grid-area: i;
+  }
+  .tiles-center img {
+    height: 100%;
+  }
+}
+
+/*  End Pengaturan tiles css */
